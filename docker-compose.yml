@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: proxy.Dockerfile
+    restart: always
+    environment:
+      - PROXY_HOST
+      - PROXY_USER
+      - PROXY_NAME
+      - PROXY_PASS
+      - PROXY_PORT
+      - PROXY_HTTP_PORT
+    ports:
+      - "${PROXY_HTTP_PORT}:${PROXY_HTTP_PORT}"
+    # depends_on:
+    #   - db
