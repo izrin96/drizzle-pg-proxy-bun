@@ -7,8 +7,10 @@
     "url": "https://github.com/teamreflex/drizzle-pg-proxy-bun.git"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "start": "bun run ./src/http-proxy.ts",
+    "build": "bun build ./src/http-proxy.ts --outdir ./dist --target bun"
+  },
   "license": "MIT",
   "dependencies": {
     "hono": "^4.1.0",
